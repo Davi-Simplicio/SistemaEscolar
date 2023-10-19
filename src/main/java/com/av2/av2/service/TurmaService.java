@@ -1,8 +1,6 @@
 package com.av2.av2.service;
 
-import com.av2.av2.model.Secretario;
 import com.av2.av2.model.Turma;
-import com.av2.av2.repository.SecretarioRepository;
 import com.av2.av2.repository.TurmaRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

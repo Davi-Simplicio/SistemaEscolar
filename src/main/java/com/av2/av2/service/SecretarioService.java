@@ -1,8 +1,6 @@
 package com.av2.av2.service;
 
-import com.av2.av2.model.Prova;
 import com.av2.av2.model.Secretario;
-import com.av2.av2.repository.ProvaRepository;
 import com.av2.av2.repository.SecretarioRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -13,10 +13,8 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 public class Professor extends Usuario{
-    @OneToMany
-    private Set<Turma> turma;
+
     @OneToOne
     private Disciplina disciplina;
 }

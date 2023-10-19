@@ -1,8 +1,6 @@
 package com.av2.av2.service;
 
-import com.av2.av2.model.Aluno;
 import com.av2.av2.model.Disciplina;
-import com.av2.av2.repository.AlunoRepository;
 import com.av2.av2.repository.DisciplinaRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
