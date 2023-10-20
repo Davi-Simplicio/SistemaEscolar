@@ -23,8 +23,8 @@ public class AlunoController {
         return alunoService.buscarTodos();
     }
 
-    @DeleteMapping
-    public void deletar(@RequestParam("value") Integer id) {
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Integer id) {
         alunoService.deletar(id);
     }
 

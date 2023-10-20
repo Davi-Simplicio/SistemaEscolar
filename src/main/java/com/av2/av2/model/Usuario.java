@@ -14,13 +14,11 @@ import java.sql.SQLException;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Integer id;
+    @Column(unique = true)
     private String nome;
     private Integer idade;
     private String senha;
     private String endereco;
-
-
-
 }

@@ -25,8 +25,8 @@ public class ProfessorController {
         return professorService.buscarTodos();
     }
 
-    @DeleteMapping
-    public void deletar(@RequestParam("value") Integer id) {
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Integer id) {
         professorService.deletar(id);
     }
 

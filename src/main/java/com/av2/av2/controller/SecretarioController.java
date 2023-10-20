@@ -25,8 +25,8 @@ public class SecretarioController {
         return secretarioService.buscarTodos();
     }
 
-    @DeleteMapping
-    public void deletar(@RequestParam("value") Integer id) {
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Integer id) {
         secretarioService.deletar(id);
     }
 

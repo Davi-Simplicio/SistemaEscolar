@@ -25,8 +25,8 @@ public class TurmaController {
         return turmaService.buscarTodos();
     }
 
-    @DeleteMapping
-    public void deletar(@RequestParam("value") Integer id) {
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Integer id) {
         turmaService.deletar(id);
     }
 

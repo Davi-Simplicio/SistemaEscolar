@@ -25,8 +25,8 @@ public class DisciplinaController {
         return disciplinaService.buscarTodos();
     }
 
-    @DeleteMapping
-    public void deletar(@RequestParam("value") Integer id) {
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Integer id) {
         disciplinaService.deletar(id);
     }
 

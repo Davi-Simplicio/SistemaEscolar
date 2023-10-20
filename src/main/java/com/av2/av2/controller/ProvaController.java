@@ -26,8 +26,8 @@ public class ProvaController {
         return provaService.buscarTodos();
     }
 
-    @DeleteMapping
-    public void deletar(@RequestParam("value") Integer id) {
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable Integer id) {
         provaService.deletar(id);
     }
 
