@@ -5,6 +5,7 @@ import com.av2.av2.repository.SecretarioRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.naming.NoPermissionException;
 import java.util.Collection;
 import java.util.Optional;
 
@@ -23,8 +24,12 @@ public class SecretarioService {
         return secretarioRepository.findAll();
     }
 
-    public void deletar(Integer id) {
-        secretarioRepository.deleteById(id);
+    public void deletar(Integer id) throws NoPermissionException {
+        if (buscarUm(id).getPodeSerDeletado()){
+            secretarioRepository.deleteById(id);
+        }else{
+            throw new NoPermissionException();
+        }
     }
 
     public void salvar(Secretario secretario) {

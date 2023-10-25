@@ -13,7 +13,6 @@ import java.util.Optional;
 public class ProfessorService {
     private final ProfessorRepository professorRepository;
 
-
     public Professor buscarUm(Integer id) {
         Optional<Professor> professorOptional = professorRepository.findById(id);
         return professorOptional.get();
@@ -24,6 +23,7 @@ public class ProfessorService {
     }
 
     public void deletar(Integer id) {
+        buscarUm(id).setDisciplina(null);
         professorRepository.deleteById(id);
     }
 

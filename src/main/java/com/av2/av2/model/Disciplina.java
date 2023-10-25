@@ -1,10 +1,14 @@
 package com.av2.av2.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Data
 @NoArgsConstructor
@@ -16,7 +20,5 @@ public class Disciplina {
     private Integer id;
     private String nome;
     private Double cargaHoraria;
-    @OneToOne(mappedBy = "disciplina")
-    @JsonIgnore
-    private Professor professor;
+    private Boolean podeSerDeletado = true;
 }

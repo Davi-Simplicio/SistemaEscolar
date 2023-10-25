@@ -1,13 +1,14 @@
 package com.av2.av2.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
-import java.util.Set;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -15,7 +16,6 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 public class Professor extends Usuario{
-
     @OneToOne
     private Disciplina disciplina;
 }

@@ -1,8 +1,6 @@
 package com.av2.av2.controller;
 
-import com.av2.av2.model.Disciplina;
 import com.av2.av2.model.Professor;
-import com.av2.av2.service.DisciplinaService;
 import com.av2.av2.service.ProfessorService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

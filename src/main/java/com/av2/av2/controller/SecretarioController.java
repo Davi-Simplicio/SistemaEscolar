@@ -1,12 +1,11 @@
 package com.av2.av2.controller;
 
-import com.av2.av2.model.Prova;
 import com.av2.av2.model.Secretario;
-import com.av2.av2.service.ProvaService;
 import com.av2.av2.service.SecretarioService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.naming.NoPermissionException;
 import java.util.Collection;
 
 @RestController
@@ -26,7 +25,7 @@ public class SecretarioController {
     }
 
     @DeleteMapping("/{id}")
-    public void deletar(@PathVariable Integer id) {
+    public void deletar(@PathVariable Integer id) throws NoPermissionException {
         secretarioService.deletar(id);
     }
 

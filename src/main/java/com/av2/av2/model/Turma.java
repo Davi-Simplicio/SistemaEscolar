@@ -1,12 +1,12 @@
 package com.av2.av2.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
-import java.util.ArrayList;
 import java.util.Set;
 
 @Data
@@ -18,9 +18,6 @@ public class Turma {
     @GeneratedValue(strategy = GenerationType.TABLE)
     @Column(name="id",unique=true,nullable=false)
     private Integer id;
-    @OneToMany(mappedBy = "turma")
-    @JsonIgnore
-    private Set<Aluno> alunos;
     @ManyToMany
     private Set<Disciplina> disciplinas;
 }

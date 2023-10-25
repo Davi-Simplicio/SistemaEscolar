@@ -1,8 +1,6 @@
 package com.av2.av2.controller;
 
-import com.av2.av2.model.Secretario;
 import com.av2.av2.model.Turma;
-import com.av2.av2.service.SecretarioService;
 import com.av2.av2.service.TurmaService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

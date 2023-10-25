@@ -1,17 +1,24 @@
 package com.av2.av2.service;
 
-import com.av2.av2.model.Disciplina;
+import com.av2.av2.model.*;
 import com.av2.av2.repository.DisciplinaRepository;
+import com.av2.av2.repository.ProfessorRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.naming.NoPermissionException;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 @AllArgsConstructor
 public class DisciplinaService {
     private final DisciplinaRepository disciplinaRepository;
+    private final ProfessorService professorService;
+    private final ProvaService provaService;
+    private final TurmaService turmaService;
 
 
     public Disciplina buscarUm(Integer id) {
@@ -23,8 +30,33 @@ public class DisciplinaService {
         return disciplinaRepository.findAll();
     }
 
-    public void deletar(Integer id) {
-        disciplinaRepository.deleteById(id);
+    public void deletar(Integer id) throws NoPermissionException {
+        if (!buscarUm(id).getPodeSerDeletado()) {
+            throw new NoPermissionException();
+        } else {
+            for (Professor professor : professorService.buscarTodos()) {
+                if (professor.getDisciplina() == buscarUm(id)) {
+                    professor.setDisciplina(null);
+                }
+            }
+            Disciplina disciplina = buscarUm(id);
+            for (Prova prova : provaService.buscarTodos()) {
+                if (prova.getDisciplina().getId().equals(disciplina.getId())) {
+                    provaService.deletar(prova.getId());
+                }
+            }
+            for (Turma turma:turmaService.buscarTodos()) {
+                Set<Disciplina> lista = turma.getDisciplinas();
+                for (Disciplina disciplina1: lista) {
+                    if (disciplina1.getId().equals(id)){
+                        lista.remove(disciplina1);
+                        break;
+                    }
+                }
+                turmaService.salvar(turma);
+            }
+            disciplinaRepository.deleteById(id);
+        }
     }
 
     public void salvar(Disciplina disciplina) {

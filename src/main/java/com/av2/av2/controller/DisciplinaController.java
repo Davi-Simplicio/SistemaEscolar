@@ -1,12 +1,11 @@
 package com.av2.av2.controller;
 
-import com.av2.av2.model.Aluno;
 import com.av2.av2.model.Disciplina;
-import com.av2.av2.service.AlunoService;
 import com.av2.av2.service.DisciplinaService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.naming.NoPermissionException;
 import java.util.Collection;
 
 @RestController
@@ -26,7 +25,7 @@ public class DisciplinaController {
     }
 
     @DeleteMapping("/{id}")
-    public void deletar(@PathVariable Integer id) {
+    public void deletar(@PathVariable Integer id) throws NoPermissionException {
         disciplinaService.deletar(id);
     }
 

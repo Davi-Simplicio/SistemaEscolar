@@ -1,8 +1,6 @@
 package com.av2.av2.controller;
 
-import com.av2.av2.model.Turma;
 import com.av2.av2.model.Usuario;
-import com.av2.av2.service.TurmaService;
 import com.av2.av2.service.UsuarioService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

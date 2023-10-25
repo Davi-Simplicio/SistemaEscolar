@@ -1,13 +1,15 @@
 package com.av2.av2.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
-import java.util.Set;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.boot.jaxb.mapping.marshall.OnDeleteActionMarshalling;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -15,8 +17,6 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 public class Aluno extends Usuario{
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     private Turma turma;
-    @OneToMany(mappedBy = "aluno")
-    private Set<Prova> provas;
 }
