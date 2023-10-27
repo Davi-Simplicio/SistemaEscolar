@@ -20,5 +20,4 @@ public class Disciplina {
     private Integer id;
     private String nome;
     private Double cargaHoraria;
-    private Boolean podeSerDeletado = true;
 }

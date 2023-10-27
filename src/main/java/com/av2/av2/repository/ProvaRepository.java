@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProvaRepository extends JpaRepository<Prova,Integer> {
+    public Prova findByDisciplina_Id(Integer id);
 }

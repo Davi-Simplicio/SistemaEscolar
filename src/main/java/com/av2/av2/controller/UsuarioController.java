@@ -18,6 +18,11 @@ public class UsuarioController {
         return usuarioService.buscarUm(id);
     }
 
+    @GetMapping("/nome/senha/{nome}/{senha}")
+    public Usuario buscarUsuarioNomeSenha(@PathVariable String nome, @PathVariable String senha) {
+        return usuarioService.buscarUsuarioPorNomeSenha(nome,senha);
+    }
+
     @GetMapping
     public Collection<Usuario> buscarTodos() {
         return usuarioService.buscarTodos();

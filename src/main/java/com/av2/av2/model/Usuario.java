@@ -14,9 +14,10 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Integer id;
-    @Column(unique = true)
+    @Column(unique = true,nullable = false)
     private String nome;
     private Integer idade;
+    @Column(nullable = false)
     private String senha;
     private String endereco;
 }

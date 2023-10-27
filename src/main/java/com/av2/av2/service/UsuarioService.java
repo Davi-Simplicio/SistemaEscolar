@@ -23,6 +23,14 @@ public class UsuarioService {
         return usuarioRepository.findAll();
     }
 
+    public Usuario buscarUsuarioPorNomeSenha(String nome,String senha){
+        Usuario usuario = usuarioRepository.findByNomeAndSenha(nome,senha);
+       if( usuario == null ){
+           throw new RuntimeException("Usuario nao encontrado");
+       }
+       return usuario;
+    }
+
     public void deletar(Integer id) {
         usuarioRepository.deleteById(id);
     }

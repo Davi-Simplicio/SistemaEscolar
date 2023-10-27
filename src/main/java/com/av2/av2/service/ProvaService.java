@@ -20,6 +20,9 @@ public class ProvaService {
         return provaOptional.get();
     }
 
+    public Prova buscarPorDisciplina(Integer id){
+        return provaRepository.findByDisciplina_Id(id);
+    }
     public Collection<Prova> buscarTodos() {
         return provaRepository.findAll();
     }

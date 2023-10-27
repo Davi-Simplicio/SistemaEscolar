@@ -30,21 +30,15 @@ public class DisciplinaService {
         return disciplinaRepository.findAll();
     }
 
-    public void deletar(Integer id) throws NoPermissionException {
-        if (!buscarUm(id).getPodeSerDeletado()) {
-            throw new NoPermissionException();
-        } else {
+    public void deletar(Integer id) {
             for (Professor professor : professorService.buscarTodos()) {
                 if (professor.getDisciplina() == buscarUm(id)) {
                     professor.setDisciplina(null);
                 }
-            }
-            Disciplina disciplina = buscarUm(id);
-            for (Prova prova : provaService.buscarTodos()) {
-                if (prova.getDisciplina().getId().equals(disciplina.getId())) {
-                    provaService.deletar(prova.getId());
-                }
-            }
+            try{
+                provaService.deletar(provaService.buscarPorDisciplina(id).getId());
+            }catch (Exception ignored){}
+
             for (Turma turma:turmaService.buscarTodos()) {
                 Set<Disciplina> lista = turma.getDisciplinas();
                 for (Disciplina disciplina1: lista) {
