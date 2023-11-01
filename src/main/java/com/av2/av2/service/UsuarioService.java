@@ -25,10 +25,7 @@ public class UsuarioService {
 
     public Usuario buscarUsuarioPorNomeSenha(String nome,String senha){
         Usuario usuario = usuarioRepository.findByNomeAndSenha(nome,senha);
-       if( usuario == null ){
-           throw new RuntimeException("Usuario nao encontrado");
-       }
-       return usuario;
+        throw new RuntimeException("Usuario nao encontrado");
     }
 
     public void deletar(Integer id) {

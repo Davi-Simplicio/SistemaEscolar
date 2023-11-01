@@ -12,7 +12,6 @@ import org.hibernate.annotations.OnDeleteAction;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 public class Disciplina {
     @Id

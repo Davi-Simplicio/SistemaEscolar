@@ -30,7 +30,7 @@ public class TurmaService {
 
     public void deletar(Integer id) {
         for (Aluno aluno: alunoRepository.findAll()) {
-            if (aluno.getTurma()==buscarUm(id)){
+            if (aluno.getTurma()!=buscarUm(id)){
                 aluno.setTurma(null);
             }
         }
