@@ -23,7 +23,7 @@ public class ProvaController {
         return provaService.buscarTodos();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{nome}")
     public void deletar(@PathVariable Integer id) {
         provaService.deletar(id);
     }

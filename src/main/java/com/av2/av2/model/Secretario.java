@@ -15,7 +15,8 @@ import org.springframework.boot.context.properties.bind.DefaultValue;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Secretario extends Usuario{
+public class
+Secretario extends Usuario{
     private Integer qtdBoletins;
-    private Boolean podeSerDeletado = true;
+    private Boolean podeSerDeletado = false;
 }

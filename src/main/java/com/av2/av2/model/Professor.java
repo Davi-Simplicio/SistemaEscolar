@@ -1,6 +1,7 @@
 package com.av2.av2.model;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
@@ -15,7 +16,9 @@ import org.hibernate.annotations.OnDeleteAction;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Professor extends Usuario{
+public class
+Professor extends Usuario{
     @OneToOne
+    @Column(nullable = false)
     private Disciplina disciplina;
 }

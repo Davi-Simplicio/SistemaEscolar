@@ -3,6 +3,7 @@ package com.av2.av2.service;
 import com.av2.av2.model.*;
 import com.av2.av2.repository.DisciplinaRepository;
 import com.av2.av2.repository.ProfessorRepository;
+import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +31,7 @@ public class DisciplinaService {
         return disciplinaRepository.findAll();
     }
 
-    public void deletar(Integer id) {
+    private void deletar(Integer id) {
             for (Professor professor : professorService.buscarTodos()) {
                 if (professor.getDisciplina() == buscarUm(id)) {
                     professor.setDisciplina(null);

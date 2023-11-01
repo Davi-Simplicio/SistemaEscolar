@@ -15,8 +15,8 @@ import org.hibernate.annotations.OnDeleteAction;
 @Entity
 public class Disciplina {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
     private String nome;
-    private Double cargaHoraria;
+    private String cargaHoraria;
 }
