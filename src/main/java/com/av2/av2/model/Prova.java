@@ -14,7 +14,7 @@ public class Prova {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Integer id;
     private Double nota;
-    @ManyToMany
+    @ManyToOne
     private Aluno aluno;
     @ManyToOne
     private Disciplina disciplina;

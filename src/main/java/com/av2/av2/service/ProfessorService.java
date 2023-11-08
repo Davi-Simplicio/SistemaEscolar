@@ -14,12 +14,12 @@ import java.util.Optional;
 public class ProfessorService {
     private final ProfessorRepository professorRepository;
 
-    public Turma buscarUm(Integer id) {
-        Optional<Turma> professorOptional = professorRepository.findById(id);
+    public Professor buscarUm(Integer id) {
+        Optional<Professor> professorOptional = professorRepository.findById(id);
         return professorOptional.get();
     }
 
-    public Collection<Turma> buscarTodos() {
+    public Collection<Professor> buscarTodos() {
         return professorRepository.findAll();
     }
 
@@ -28,7 +28,7 @@ public class ProfessorService {
         professorRepository.deleteById(id);
     }
 
-    public void salvar(Turma professor) {
+    public void salvar(Professor professor) {
         professorRepository.save(professor);
     }
 }

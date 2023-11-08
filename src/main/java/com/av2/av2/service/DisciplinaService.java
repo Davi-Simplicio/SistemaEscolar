@@ -31,7 +31,7 @@ public class DisciplinaService {
         return disciplinaRepository.findAll();
     }
 
-    private void deletar(Integer id) {
+    public void deletar(Integer id) {
             for (Professor professor : professorService.buscarTodos()) {
                 if (professor.getDisciplina() == buscarUm(id)) {
                     professor.setDisciplina(null);

@@ -30,7 +30,7 @@ public class SecretarioController {
     }
 
     @PostMapping
-    public void inserir(@PathVariable Secretario secretario) {
+    public void inserir(@RequestBody Secretario secretario) {
         secretarioService.salvar(secretario);
     }
 

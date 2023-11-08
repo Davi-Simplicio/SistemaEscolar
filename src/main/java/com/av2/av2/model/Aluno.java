@@ -18,7 +18,6 @@ import org.hibernate.boot.jaxb.mapping.marshall.OnDeleteActionMarshalling;
 @AllArgsConstructor
 @Entity
 public class Aluno extends Usuario{
-    @JsonIgnore
     @ManyToOne
     private Turma turma;
 }

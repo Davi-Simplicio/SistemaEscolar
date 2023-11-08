@@ -19,6 +19,6 @@ import org.hibernate.annotations.OnDeleteAction;
 public class
 Professor extends Usuario{
     @OneToOne
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private Disciplina disciplina;
 }

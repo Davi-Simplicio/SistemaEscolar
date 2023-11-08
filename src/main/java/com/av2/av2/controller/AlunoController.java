@@ -9,11 +9,11 @@ import java.util.Collection;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("")
+@RequestMapping("/aluno")
 public class AlunoController {
     private final AlunoService alunoService;
 
-    @GetMapping("/{id")
+    @GetMapping("/{id}")
     public Aluno buscarUm(@PathVariable Integer id) {
         return alunoService.buscarUm(id);
     }
