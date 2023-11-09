@@ -25,11 +25,11 @@ public class SecretarioService {
     }
 
     public void deletar(Integer id) throws NoPermissionException {
-        if (buscarUm(id).getPodeSerDeletado()){
+//        if (buscarUm(id).getPodeSerDeletado()){
             secretarioRepository.deleteById(id);
-        }else{
-            throw new NoPermissionException();
-        }
+//        }else{
+//            throw new NoPermissionException();
+//        }
     }
 
     public void salvar(Secretario secretario) {

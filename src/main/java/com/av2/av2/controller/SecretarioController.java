@@ -38,4 +38,5 @@ public class SecretarioController {
     public void atualizar(@RequestBody  Secretario secretario) {
         secretarioService.salvar(secretario);
     }
+
 }
